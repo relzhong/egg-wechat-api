@@ -1,11 +1,11 @@
 {
-  "name": "egg-wechat-api",
+  "name": "egg-wechat-api-cache",
   "version": "1.1.0",
-  "description": "wechat-api for egg",
+  "description": "wechat-api for egg using egg-cache backend",
   "eggPlugin": {
     "name": "wechatApi",
     "dependencies": [
-      "redis"
+      "cache"
     ]
   },
   "keywords": [
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "co-wechat-api": "^3.5.0",
-    "egg-redis": "^1.0.2"
+    "egg-cache": "^0.0.5"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -52,12 +52,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs-community/egg-wechat-api.git"
+    "url": "git+https://github.com/relzhong/egg-wechat-api.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/relzhong/egg-wechat-api/issues"
   },
-  "homepage": "https://github.com/eggjs-community/egg-wechat-api#readme",
-  "author": "thonatos",
+  "homepage": "https://github.com/relzhong/egg-wechat-api#readme",
+  "author": "relzhong",
   "license": "MIT"
 }

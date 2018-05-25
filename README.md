@@ -1,24 +1,9 @@
-# egg-wechat-api
+# egg-wechat-api-cache
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
-[![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/egg-wechat-api.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/egg-wechat-api
-[travis-image]: https://img.shields.io/travis/eggjs-community/egg-wechat-api.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs-community/egg-wechat-api
-[codecov-image]: https://img.shields.io/codecov/c/github/eggjs-community/egg-wechat-api.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/eggjs-community/egg-wechat-api?branch=master
-[david-image]: https://img.shields.io/david/eggjs-community/egg-wechat-api.svg?style=flat-square
-[david-url]: https://david-dm.org/eggjs-community/egg-wechat-api
-[snyk-image]: https://snyk.io/test/npm/egg-wechat-api/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/egg-wechat-api
-[download-image]: https://img.shields.io/npm/dm/egg-wechat-api.svg?style=flat-square
-[download-url]: https://npmjs.org/package/egg-wechat-api
+[npm-image]: https://img.shields.io/npm/v/egg-wechat-api-cache.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/egg-wechat-api-cache
 
 <!--
 Description here.
@@ -29,12 +14,17 @@ egg plugin for [wechat-api](https://github.com/node-webot/co-wechat-api)
 ## Install
 
 ```bash
-$ npm i egg-wechat-api --save
+$ npm i egg-wechat-api-cache --save
+```
+### use a inmemory cache see [node-cache-manager](https://github.com/BryanDonovan/node-cache-manager) for more cache engine
+
+```bash
+$ npm i cache-manager-memory-store --save 
 ```
 
 ## Prerequisite
 
-Node.js >= 7.x
+Node.js >= 8.x
 
 ## Usage
 
@@ -43,7 +33,7 @@ Node.js >= 7.x
 ## Dependencies
 
 - egg
-	- [egg-redis](https://github.com/eggjs/egg-redis)
+	- [egg-cache](https://github.com/hexindai/egg-cache)
 - other
 	- [co-wechat-api](https://github.com/node-webot/co-wechat-api)
 
@@ -53,10 +43,10 @@ Node.js >= 7.x
 // {app_root}/config/plugin.js
 exports.wechatApi = {
   enable: true,
-  package: 'egg-wechat-api',
+  package: 'egg-wechat-api-cache',
 };
 ```
-> if redis is single client
+> use egg-cache default store
 
 ```js
 // {app_root}/config/config.default.js
@@ -65,18 +55,18 @@ exports.wechatApi = {
   appSecret: '',
 };
 ```
-> if redis is multi clients
+> select egg-cache store.
 
 ```js
 // {app_root}/config/config.default.js
 exports.wechatApi = {
   appId: '',
   appSecret: '',
-  redisInstance: '', // select instance of redis
+  cacheInstance: '', // select store of egg-cache
 };
 ```
 
-> __Redis is required !__
+> egg-cache is required !__
 
 see [config/config.default.js](config/config.default.js) for more detail.
 
@@ -109,7 +99,7 @@ module.exports = app => {
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+Please open an issue [here](https://github.com/relzhong/egg-wechat-api-cache/issues).
 
 ## License
 

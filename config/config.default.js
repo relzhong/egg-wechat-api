@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * egg-wechat-api default config
+ * egg-wechat-api-cache default config
  * @member Config#wechatApi
  * @property {String} SOME_KEY - some description
  */
@@ -14,5 +14,5 @@ exports.wechatApi = {
   // wechat
   appId: '',
   appSecret: '',
-  redisInstance: '',
+  cacheInstance: '',
 };
