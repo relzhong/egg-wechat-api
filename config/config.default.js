@@ -5,7 +5,7 @@
  * @member Config#wechatApi
  * @property {String} SOME_KEY - some description
  */
-exports.wechatApi = {
+exports.wechatApiCache = {
   default: {
   },
   app: true,

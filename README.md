@@ -41,7 +41,7 @@ Node.js >= 8.x
 
 ```js
 // {app_root}/config/plugin.js
-exports.wechatApi = {
+exports.wechatApiCache = {
   enable: true,
   package: 'egg-wechat-api-cache',
 };
